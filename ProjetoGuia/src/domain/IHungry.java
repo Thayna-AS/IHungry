@@ -1,85 +1,108 @@
 package domain;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
 import domain.model.Cardapio;
+import domain.model.PrintTela;
 
 public class IHungry {
 
-	        public static void main(String[] args) {
-	    		
-	    		
-	    		Scanner sc = new Scanner(System.in);
-	    		Cardapio cardapio = new Cardapio();
-	    		
-	    		Map<Integer,Integer> escolhaLanche = new HashMap<Integer,Integer>();
-	    		Map<Integer,Integer> escolhaBebida = new HashMap<Integer,Integer>();
-	    		
+	public static void main(String[] args) {
 
-	    		
-	    		
-	    		int validadorLanche = 1;
-	    		while(validadorLanche == 1)
-	    		{
-	    			System.out.println("                   ESCOLHA SEU LANCHE                          ");
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println(" _____________________________________________________________ ");
-	    			cardapio.MostrarLanches();
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          digite o número da opção desejada           ");
-	    			System.out.println("---------------------------------------------------------------");	
-	    			int armazenaIdLanche = sc.nextInt();
-	    			
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          Escolha a quantidade         ");
-	    			System.out.println("---------------------------------------------------------------");		
-	    			int armazenaQuantidadeLanche = sc.nextInt();
-	    			
-	    			escolhaLanche.put(armazenaIdLanche, armazenaQuantidadeLanche);
-	    			
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          Prosseguir para bebidas?        ");
-	    			System.out.println("          1 - Não       ");
-	    			System.out.println("          2 - Sim       ");
-	    			System.out.println("---------------------------------------------------------------");	
-	    			validadorLanche = sc.nextInt();
-	    		}
-	    		
-	    		int validadorBebida = 1;
-	    		while(validadorBebida == 1)
-	    		{
-	    			System.out.println("                   ESCOLHA SUA BEBIDA                          ");
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println(" _____________________________________________________________ ");
-	    			cardapio.MostrarBebidas();
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          digite o número da opção desejada           ");
-	    			System.out.println("---------------------------------------------------------------");	
-	    			int armazenaIdBebida = sc.nextInt();
-	    			
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          Escolha a quantidade         ");
-	    			System.out.println("---------------------------------------------------------------");		
-	    			int armazenaQuantidadeBebida = sc.nextInt();
-	    			
-	    			escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
-	    			
-	    			System.out.println("---------------------------------------------------------------");
-	    			System.out.println("          Prosseguir para Sobremesas?        ");
-	    			System.out.println("          1 - Não       ");
-	    			System.out.println("          2 - Sim       ");
-	    			System.out.println("---------------------------------------------------------------");	
-	    			validadorBebida = sc.nextInt();
-	    		}
+		int opcao;
+		Scanner sc = new Scanner(System.in);
+		Cardapio cardapio = new Cardapio();
 
-	    		cardapio.GerarNotaFiscal(escolhaBebida, escolhaBebida, escolhaBebida);
-	    		
+		Map<Integer, Integer> escolhaLanche = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> escolhaBebida = new HashMap<Integer, Integer>();
 
-	    		//Criar De sobremesas
+		while (true) {
+            
+			PrintTela.menuInicio();
+			
+			try {
+				opcao = sc.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("\nDigite valores inteiros!");
+				sc.nextLine();
+				opcao = 0;
+			}
 
+			if (opcao == 7) {
+				System.out.println("\n vou sempre ");
+				sc.close();
+				System.exit(0);
+			}
+
+			switch (opcao) {
+			case 1:
+				int opLanche;
+				do{
+					PrintTela.escolhaLanches();
+					int armazenaIdLanche = sc.nextInt();
+                    PrintTela.escolhaQuantidade();
+					int armazenaQuantidadeLanche = sc.nextInt();
+					PrintTela.adicionarFinalizar();
+					opLanche = sc.nextInt();
+					escolhaLanche.put(armazenaIdLanche, armazenaQuantidadeLanche);
+				}while( opLanche != 1);
+				break;
+			case 2:
+
+				int opbebida ;
+				do {
+					System.out.println("                   ESCOLHA SUA BEBIDA                          ");
+					System.out.println("---------------------------------------------------------------");
+					System.out.println(" _____________________________________________________________ ");
+					cardapio.MostrarBebidas();
+					System.out.println("---------------------------------------------------------------");
+					System.out.println("          digite o número da opção desejada           ");
+					System.out.println("---------------------------------------------------------------");
+					int armazenaIdBebida = sc.nextInt();
+					PrintTela.escolhaQuantidade();
+					int armazenaQuantidadeBebida = sc.nextInt();
+					PrintTela.adicionarFinalizar();
+					opbebida = sc.nextInt();
+
+					escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
+				}while (opbebida != 1);
+				break;
+			case 3:
+				System.out.println("\n Buscar Conta por número");
+
+				keyPress();
+				break;
+			case 4:
+				cardapio.GerarNotaFiscal(escolhaBebida, escolhaBebida, escolhaBebida);
+
+				keyPress();
+				break;
+
+			default:
+				System.out.println("\nOpção Inválida");
+
+				keyPress();
+				break;
+			}
+		}
 
 	}
 
+	public static void keyPress() {
+
+		try {
+
+			System.out.println("\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+	}
 }
