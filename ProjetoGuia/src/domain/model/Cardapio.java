@@ -8,13 +8,15 @@ import java.util.Map;
 public class Cardapio {
 	public static ArrayList<Produto> Lanches = new ArrayList<Produto>() {
 		{
-			add(new Produto("X-Salada", "Hmmmmmm! eu gostum", "Lanches", 10.00, 1));
-			add(new Produto("X-Podrão", "Hmmmmmm! eu gostum", "Lanches", 10.56, 2));
-			add(new Produto("Xburguer", "Hmmmmmm! eu gostum", "Lanches", 10.00, 3));
+			add(new Produto("CHICKEN BARBECUE BURGER", "Pão de batata com manteiga, com 140 g de frango empanado,temperado com molho barbecue,cebola roxa fatiada,tomate fatiado, alface americana e um molho caprichado de picles", "Lanches", 24.90, 1));
+			add(new Produto("CLASSIC BACON BURGER", "Pão de batata com manteiga, com 120 g de hambúrguer de carne, mix de cebola roxa e picles picados,crocante,sal temperado com pimenta e o molho especial com picles,além de ketchup e mostarda Heinz,queijo cheddar bacon fatiado. ", "Lanches", 29.90, 2));
+			add(new Produto("CHEESE BACON BURGER", "Pão de batata com manteiga, com 120 g de hambúrguer de carne,mix de cebola roxa e picles picados,crocante,sal temperado com pimenta e o molho especial com picles,além de ketchup e mostarda Heinz,queijo cheddar bacon fatiado. ", "Lanches", 27.90, 3));
+			add(new Produto("BIB´S BURGER PLANT", "Pão de batata, 113 g de hambúrguer vegetal, tomate fatiado,alface americana,picles e um saboroso molho de tomatetemperado,Contém ovo na composição do pão. ","Lanches",24.90,4));
+			add(new Produto("TRADICIONAL ROSBIFE","Pão sírio, dois ovos, alface americana, tomate, maionese especial,cremely cheddar cremoso e rosbife, é claro!","Lanches", 28.90, 5));
 		}
 	};
 
-	//criar as bebidas e armazena nesta propriedade
+	//criar as bebidas e armazenar nesta propriedade
 	public static ArrayList<Produto> Bebidas = new ArrayList<Produto>() {
 		{
 			add(new Produto("Suco de Maracuja", "Hmmmmmm! eu gostum", "Sucos", 10.00, 1));
@@ -23,19 +25,12 @@ public class Cardapio {
 		}
 	};
 
-	//criar as sobremesas e armazena nesta propriedade
+	//criar as sobremesas e armazenar nesta propriedade
 	public static ArrayList<Produto> Sobremesas = new ArrayList<Produto>() {
 		{
 			add(new Produto("Petit Gateau", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 1));
 			add(new Produto("Sorvete", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 2));
 			add(new Produto("Brigadeiro", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 3));
-		}
-	};
-	
-	public static ArrayList<Produto> Drinks = new ArrayList<Produto>() {
-		{
-			add(new Produto("Aperol", "Gelo, Aperol, espumante, água bicarbonatada.", "Drinks", 25.00, 1));
-			//adicionar demais driks.
 		}
 	};
 	
@@ -73,14 +68,6 @@ public class Cardapio {
 			}
 	}
 		
-	public static void MostraDrinks() {
-			for(Produto item : Drinks) {
-				
-				System.out.println( item.Id + " " + item.Nome + "---------" + item.Valor);
-			}
-			
-		
-	}
 	//Percorre a listas de key and value (key == Produto.Id, value = quantidade escolhida pelo usuário) e realiza a contagem do valor total
 	public void GerarNotaFiscal(Map<Integer,Integer>lanches, Map<Integer,Integer>bebidas, Map<Integer,Integer>sobremesas){
 		double valorTotal = 0;
