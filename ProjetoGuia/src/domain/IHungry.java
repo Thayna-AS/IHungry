@@ -23,7 +23,7 @@ public class IHungry {
 		Map<Integer, Integer> escolhaEntradas = new HashMap<Integer, Integer>();
 		while (true) {
             
-			PrintTela.menuInicio();
+			PrintTela.MenuInicio();
 			
 			try {
 				opcao = sc.nextInt();
@@ -40,44 +40,56 @@ public class IHungry {
 			}
 
 			switch (opcao) {
-			case 1:
+			case 1:int opentrada;
+			do{
+				PrintTela.EscolhaEntrada();
+				int armazenaIdentrada = sc.nextInt();
+                PrintTela.EscolhaQuantidade();
+				int armazenaQuantidadeEntrada = sc.nextInt();
+				PrintTela.AdicionarFinalizar();
+				opentrada = sc.nextInt();
+				escolhaEntradas.put(armazenaIdentrada, armazenaQuantidadeEntrada);
+			}while( opentrada != 1);
+				
+				break;
+			case 2:
 				int opLanche;
 				do{
-					PrintTela.escolhaLanches();
+					PrintTela.EscolhaLanches();
 					int armazenaIdLanche = sc.nextInt();
-                    PrintTela.escolhaQuantidade();
+                    PrintTela.EscolhaQuantidade();
 					int armazenaQuantidadeLanche = sc.nextInt();
-					PrintTela.adicionarFinalizar();
+					PrintTela.AdicionarFinalizar();
 					opLanche = sc.nextInt();
 					escolhaLanche.put(armazenaIdLanche, armazenaQuantidadeLanche);
 				}while( opLanche != 1);
 				break;
-			case 2:
-
-				int opbebida ;
-				do {
-					System.out.println("                   ESCOLHA SUA BEBIDA                          ");
-					System.out.println("---------------------------------------------------------------");
-					System.out.println(" _____________________________________________________________ ");
-					cardapio.MostrarBebidas();
-					System.out.println("---------------------------------------------------------------");
-					System.out.println("          digite o número da opção desejada           ");
-					System.out.println("---------------------------------------------------------------");
-					int armazenaIdBebida = sc.nextInt();
-					PrintTela.escolhaQuantidade();
-					int armazenaQuantidadeBebida = sc.nextInt();
-					PrintTela.adicionarFinalizar();
-					opbebida = sc.nextInt();
-
-					escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
-				}while (opbebida != 1);
-				break;
 			case 3:
-				System.out.println("\n Buscar Conta por número");
-
-				keyPress();
+				int opBebida;
+				do{
+					PrintTela.EscolhaBebida();
+					int armazenaIdBebida = sc.nextInt();
+                    PrintTela.EscolhaQuantidade();
+					int armazenaQuantidadeBebida = sc.nextInt();
+					PrintTela.AdicionarFinalizar();
+					opBebida = sc.nextInt();
+					escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
+				}while( opBebida != 1);
 				break;
 			case 4:
+				int opSobremesa;
+				do{
+					PrintTela.EscolhaSobremesa();
+					int armazenaIdSobremesa = sc.nextInt();
+                    PrintTela.EscolhaQuantidade();
+					int armazenaQuantidadeSobremesa = sc.nextInt();
+					PrintTela.AdicionarFinalizar();
+					opSobremesa = sc.nextInt();
+					escolhaSobremesa.put(armazenaIdSobremesa, armazenaQuantidadeSobremesa);
+				}while( opSobremesa != 1);
+				
+				break;
+			case 5:
 				cardapio.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 
 				keyPress();
@@ -86,7 +98,6 @@ public class IHungry {
 			default:
 				System.out.println("\nOpção Inválida");
 
-				keyPress();
 				break;
 			}
 		}
