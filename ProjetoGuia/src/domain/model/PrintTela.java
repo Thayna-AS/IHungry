@@ -23,15 +23,16 @@ public class PrintTela {
 					System.out.println("---------------------------------------------------------------");
 					System.out.println(" _____________________________________________________________ ");
 					System.out.println("|                                                             |");
-					System.out.println("|       1 - lanches                                           |");
-					System.out.println("|       2 - bebidas                                           |");
-					System.out.println("|       3 - sobremesa                                         |");
+					System.out.println("|       1 - Entradas                                          |");
+					System.out.println("|       2 - Lanches                                           |");
+					System.out.println("|       3 - Bebidas                                           |");
+					System.out.println("|       4 - Sobremesas                                        |");
 					System.out.println("|       4 - finaliza compra                                   |");
 					System.out.println("|       5 - retira itens                                      |");
 					System.out.println("|       6 - sair do cardapio                                  |");
-					System.out.println("                                                               ");
+					System.out.println("|                                                             |");
 					System.out.println("---------------------------------------------------------------");
-					System.out.println("          digite o úmero da opçao que voçê deseja escolhe      ");
+					System.out.println("          Digite a opção desejada                              ");
 					System.out.println("---------------------------------------------------------------");
 					System.out.println("" +TEXT_RESET);
 		}
@@ -39,7 +40,7 @@ public class PrintTela {
 		/* print da ária de lanches */
 		public static void escolhaLanches() {
 			System.out.println(TEXT_YELLOW + ANSI_BLACK_BACKGROUND
-					         + "-------------------------------------------------------------- ");
+					         + "---------------------------------------------------------------");
 			System.out.println("                   ESCOLHA SEU LANCHE                          ");
 			System.out.println("---------------------------------------------------------------");
 			System.out.println(" _____________________________________________________________ ");
@@ -52,7 +53,7 @@ public class PrintTela {
 			System.out.println(" _____________________________________________________________ ");
 			System.out.println("                                                               ");
 			System.out.println("---------------------------------------------------------------");
-			System.out.println("          digite o úmero da opçao que voçê deseja escolhe      ");
+			System.out.println("                   Digite a opção desejada                     ");
 			System.out.println("---------------------------------------------------------------");
 			System.out.println("" +TEXT_RESET);
 		}

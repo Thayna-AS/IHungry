@@ -19,7 +19,8 @@ public class IHungry {
 
 		Map<Integer, Integer> escolhaLanche = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaBebida = new HashMap<Integer, Integer>();
-
+		Map<Integer, Integer> escolhaSobremesa = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> escolhaEntradas = new HashMap<Integer, Integer>();
 		while (true) {
             
 			PrintTela.menuInicio();
@@ -77,7 +78,7 @@ public class IHungry {
 				keyPress();
 				break;
 			case 4:
-				cardapio.GerarNotaFiscal(escolhaBebida, escolhaBebida, escolhaBebida);
+				cardapio.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 
 				keyPress();
 				break;
