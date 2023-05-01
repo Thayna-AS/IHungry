@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cardapio {
+	
 	public static ArrayList<Produto> Lanches = new ArrayList<Produto>() {
 		{
 			add(new Produto("CHICKEN BARBECUE BURGER", "Pão de batata com manteiga, com 140 g de frango empanado,temperado com molho barbecue,cebola roxa fatiada,tomate fatiado, alface americana e um molho caprichado de picles", "Lanches", 24.90, 1));
@@ -19,25 +20,31 @@ public class Cardapio {
 	//criar as bebidas e armazenar nesta propriedade
 	public static ArrayList<Produto> Bebidas = new ArrayList<Produto>() {
 		{
-			add(new Produto("Suco de Maracuja", "Hmmmmmm! eu gostum", "Sucos", 10.00, 1));
-			add(new Produto("Suco de Laranja", "Hmmmmmm! eu gostum", "Sucos", 10.00, 2));
-			add(new Produto("Coca Cola", "Hmmmmmm! eu gostum", "Sucos", 10.00, 3));
+			add(new Produto("água", "Água fresca Bonafont.", "Bebidas", 5.00, 1));
+			add(new Produto("Chá", "Chá Matte sabores", "Bebidas", 5.00, 2));
+			add(new Produto("Refrigerante Lata", "Coca-cola, Pepsi, Guaraná, Fanta", "Bebidas", 7.00, 3));
+			add(new Produto("Heineken", "600ml", "Bebidas", 15.00, 4));
+			add(new Produto("Brahma", "Duplo Malte 600ml", "Bebidas", 12.00, 5));
+			add(new Produto("Skol", "600ml", "Bebidas", 10.00, 6));
+			add(new Produto("Colmeia Drinks", "Destilado com água de coco e Mel", "Bebidas", 10.00, 7));
 		}
 	};
 
 	//criar as sobremesas e armazenar nesta propriedade
 	public static ArrayList<Produto> Sobremesas = new ArrayList<Produto>() {
 		{
-			add(new Produto("Petit Gateau", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 1));
-			add(new Produto("Sorvete", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 2));
-			add(new Produto("Brigadeiro", "Hmmmmmm! eu gostum", "Sobremesas", 10.00, 3));
+			add(new Produto("Petit Gateau", "pequeno bolo de chocolate com casca e recheio cremoso servido com sorvete de creme.", "Sobremesas", 22.00, 1));
+			add(new Produto("Torta de Maçã", "Deliciosa torta de Maçã Servida com Sorvete de Canela", "Sobremesas", 25.00, 2));
+			add(new Produto("Açai", "Açai na Taça com acompanhamentos à escolha do cliente.", "Sobremesas", 17.00, 3));
 		}
 	};
 	
 	public static ArrayList<Produto> Entradas = new ArrayList<Produto>() {
 		{
-			add(new Produto("Dadinho de tapioca", "Deliciosos dadinhos de tapioca com geléia de pimenta!", "Entradas", 25.00, 1));
-			//adicionar demais Entradas.
+			add(new Produto("Coxinha", "Deliciosa coxinha tradicional.","Entradas", 8.00, 1));
+			add(new Produto("Pastel", "Sabores: Pizza, Queijo, Carne.", "Entradas", 12.00, 2));
+			add(new Produto("Pão de queijo", "Tradicional Pão de Queijo quentinho.", "Entradas", 5.00, 3));
+			//Adicionar demais entradas.
 		}
 	};
 	
