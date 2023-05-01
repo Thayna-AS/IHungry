@@ -27,9 +27,9 @@ public class PrintTela {
 					System.out.println("|       2 - Lanches                                           |");
 					System.out.println("|       3 - Bebidas                                           |");
 					System.out.println("|       4 - Sobremesas                                        |");
-					System.out.println("|       4 - finaliza compra                                   |");
-					System.out.println("|       5 - retira itens                                      |");
-					System.out.println("|       6 - sair do cardapio                                  |");
+					System.out.println("|       5 - finaliza compra                                   |");
+					System.out.println("|       6 - retira itens                                      |");
+					System.out.println("|       7 - sair do cardapio                                  |");
 					System.out.println("|                                                             |");
 					System.out.println("---------------------------------------------------------------");
 					System.out.println("          Digite a opção desejada                              ");
