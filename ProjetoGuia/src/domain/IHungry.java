@@ -40,7 +40,19 @@ public class IHungry {
 			}
 
 			switch (opcao) {
-			case 1:
+			case 1:int opentrada;
+			do{
+				PrintTela.escolhaEntrada();
+				int armazenaIdentrada = sc.nextInt();
+                PrintTela.escolhaQuantidade();
+				int armazenaQuantidadeEntrada = sc.nextInt();
+				PrintTela.adicionarFinalizar();
+				opentrada = sc.nextInt();
+				escolhaEntradas.put(armazenaIdentrada, armazenaQuantidadeEntrada);
+			}while( opentrada != 1);
+				
+				break;
+			case 2:
 				int opLanche;
 				do{
 					PrintTela.escolhaLanches();
@@ -52,32 +64,32 @@ public class IHungry {
 					escolhaLanche.put(armazenaIdLanche, armazenaQuantidadeLanche);
 				}while( opLanche != 1);
 				break;
-			case 2:
-
-				int opbebida ;
-				do {
-					System.out.println("                   ESCOLHA SUA BEBIDA                          ");
-					System.out.println("---------------------------------------------------------------");
-					System.out.println(" _____________________________________________________________ ");
-					cardapio.MostrarBebidas();
-					System.out.println("---------------------------------------------------------------");
-					System.out.println("          digite o número da opção desejada           ");
-					System.out.println("---------------------------------------------------------------");
+			case 3:
+				int opBebida;
+				do{
+					PrintTela.escolhaBebida();
 					int armazenaIdBebida = sc.nextInt();
-					PrintTela.escolhaQuantidade();
+                    PrintTela.escolhaQuantidade();
 					int armazenaQuantidadeBebida = sc.nextInt();
 					PrintTela.adicionarFinalizar();
-					opbebida = sc.nextInt();
-
+					opBebida = sc.nextInt();
 					escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
-				}while (opbebida != 1);
-				break;
-			case 3:
-				System.out.println("\n Buscar Conta por número");
-
-				keyPress();
+				}while( opBebida != 1);
 				break;
 			case 4:
+				int opSobremesa;
+				do{
+					PrintTela.escolhaSobremesa();
+					int armazenaIdSobremesa = sc.nextInt();
+                    PrintTela.escolhaQuantidade();
+					int armazenaQuantidadeSobremesa = sc.nextInt();
+					PrintTela.adicionarFinalizar();
+					opSobremesa = sc.nextInt();
+					escolhaSobremesa.put(armazenaIdSobremesa, armazenaQuantidadeSobremesa);
+				}while( opSobremesa != 1);
+				
+				break;
+			case 5:
 				cardapio.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 
 				keyPress();
@@ -86,7 +98,6 @@ public class IHungry {
 			default:
 				System.out.println("\nOpção Inválida");
 
-				keyPress();
 				break;
 			}
 		}

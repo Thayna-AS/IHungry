@@ -54,8 +54,9 @@ public class Cardapio {
 	public static ArrayList<Produto> Entradas = new ArrayList<Produto>() {
 		{
 			add(new Produto("Coxinha", "Deliciosa coxinha tradicional.", "Entradas", 8.00, 1));
-			add(new Produto("Pastel", "Sabores: Pizza, Queijo, Carne.", "Entradas", 12.00, 2));
-			add(new Produto("Pão de queijo", "Tradicional Pão de Queijo quentinho.", "Entradas", 5.00, 3));
+			add(new Produto("Pastel de queijo", "Sabores: Pizza, Queijo, Carne.", "Entradas", 12.00, 2));
+			add(new Produto("Pastel de carne", "Sabores: Pizza, Queijo, Carne.", "Entradas", 12.00, 3));
+			add(new Produto("Pão de queijo", "Tradicional Pão de Queijo quentinho.", "Entradas", 5.00, 4));
 			// Adicionar demais entradas.
 		}
 	};
