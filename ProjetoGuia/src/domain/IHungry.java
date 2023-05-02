@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 import domain.model.Cardapio;
 import domain.model.PrintTela;
+import domain.model.Produto;
+import domain.model.NF;
 
 public class IHungry {
 
@@ -16,11 +18,14 @@ public class IHungry {
 		int opcao;
 		Scanner sc = new Scanner(System.in);
 		Cardapio cardapio = new Cardapio();
-
+		
+		
 		Map<Integer, Integer> escolhaLanche = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaBebida = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaSobremesa = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaEntradas = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> RetiraLanche = new HashMap<Integer, Integer>();
+		
 		while (true) {
             
 			PrintTela.MenuInicio();
@@ -90,11 +95,13 @@ public class IHungry {
 				
 				break;
 			case 5:
-				cardapio.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
+				
+				NF.GerarNotaFiscal (escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 
 				keyPress();
 				break;
-
+			case 6:
+				
 			default:
 				System.out.println("\nOpção Inválida");
 

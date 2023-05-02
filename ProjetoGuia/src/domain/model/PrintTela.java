@@ -27,9 +27,9 @@ public class PrintTela {
 					System.out.println("|       2 - Lanches                                           |");
 					System.out.println("|       3 - Bebidas                                           |");
 					System.out.println("|       4 - Sobremesas                                        |");
-					System.out.println("|       5 - finaliza compra                                   |");
-					System.out.println("|       6 - retira itens                                      |");
-					System.out.println("|       7 - sair do cardapio                                  |");
+					System.out.println("|       5 - Finaliza compra                                   |");
+					System.out.println("|       6 - Retira itens                                      |");
+					System.out.println("|       7 - Sair do cardapio                                  |");
 					System.out.println("|                                                             |");
 					System.out.println("---------------------------------------------------------------");
 					System.out.println("          Digite a opção desejada                              ");
@@ -71,8 +71,8 @@ public class PrintTela {
 		System.out.println("|                                                             |");
 		System.out.println("|   1 Coxinha de frango-------------------avulso R$ 8,00      |");
 		System.out.println("|   2 Pastel de queijo--------------------avulso R$ 12,00     |");
-		System.out.println("|   3 pastel de carne --------------------avulso R$ 12,00     |");
-		System.out.println("|   3 pão de queijo ----------------------avulso R$ 5,00      |");
+		System.out.println("|   3 Pastel de carne --------------------avulso R$ 12,00     |");
+		System.out.println("|   3 Pão de queijo ----------------------avulso R$ 5,00      |");
 		System.out.println("|_____________________________________________________________|");
 		System.out.println("                                                               ");
 		System.out.println("---------------------------------------------------------------");
@@ -91,7 +91,7 @@ public class PrintTela {
 		System.out.println(" _____________________________________________________________ ");
 		System.out.println("|                                                             |");
 		System.out.println("|   1 Petit Gateau -----------------------avulso R$ 22,00     |");
-		System.out.println("|        pequeno bolo de chocolate com casca e recheio        |");
+		System.out.println("|        Pequeno bolo de chocolate com casca e recheio        |");
 		System.out.println("|        cremoso servido com sorvete de creme                 |");
 		System.out.println("                                                               ");
 		System.out.println("|   2 Torta de Maçã ----------------------avulso R$ 25,00     |");
@@ -99,7 +99,7 @@ public class PrintTela {
 		System.out.println("|        de Canela                                            |");
 		System.out.println("                                                               ");
 		System.out.println("|   3 Açai -------------------------------avulso R$ 17,00     |");
-		System.out.println("|         Açai na Taça com acompanhamentos à escolha          |");
+		System.out.println("|         Açai na taça com acompanhamentos à escolha          |");
 		System.out.println("|         do cliente                                          |");
 		System.out.println("|_____________________________________________________________|");
 		System.out.println("                                                               ");
@@ -118,9 +118,9 @@ public class PrintTela {
 		System.out.println("---------------------------------------------------------------");
 		System.out.println(" _____________________________________________________________ ");
 		System.out.println("|                                                             |");
-		System.out.println("|   1 água 650ml -------------------------avulso R$ 5,00      |");
-		System.out.println("|   2 chá matte --------------------------avulso R$ 5,00      |");
-		System.out.println("|   3 refrigerante lata 350ml ------------avulso R$ 7,00      |");
+		System.out.println("|   1 Água 650ml -------------------------avulso R$ 5,00      |");
+		System.out.println("|   2 Chá matte --------------------------avulso R$ 5,00      |");
+		System.out.println("|   3 Refrigerante lata 350ml ------------avulso R$ 7,00      |");
 		System.out.println("|_____________________________________________________________|");
 		System.out.println("---------------------------------------------------------------");
 		System.out.println("                   BEBIDAS ALCOÓLICAS                          ");
@@ -150,7 +150,7 @@ public class PrintTela {
 	public static void AdicionarFinalizar() {
 		System.out.println(TEXT_YELLOW + ANSI_BLACK_BACKGROUND
 				+ "---------------------------------------------------------------");
-		System.out.println("             gostaria de adicionar mais itens?                 ");
+		System.out.println("       Gostaria de adicionar mais um item dessa categoria?     ");
 		System.out.println("                          1 não                                ");
 		System.out.println("                          2 sim                                ");
 		System.out.println("---------------------------------------------------------------");
