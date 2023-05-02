@@ -39,7 +39,7 @@ public class IHungry {
 			}
 
 			if (opcao == 7) {
-				System.out.println("\n vou sempre ");
+				System.out.println("\n Volte sempre!");
 				sc.close();
 				System.exit(0);
 			}
