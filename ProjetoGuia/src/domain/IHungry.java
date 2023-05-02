@@ -18,18 +18,16 @@ public class IHungry {
 		int opcao;
 		Scanner sc = new Scanner(System.in);
 		Cardapio cardapio = new Cardapio();
-		
-		
+
 		Map<Integer, Integer> escolhaLanche = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaBebida = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaSobremesa = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> escolhaEntradas = new HashMap<Integer, Integer>();
-		Map<Integer, Integer> RetiraLanche = new HashMap<Integer, Integer>();
-		
+
 		while (true) {
-            
+
 			PrintTela.MenuInicio();
-			
+
 			try {
 				opcao = sc.nextInt();
 			} catch (InputMismatchException e) {
@@ -45,70 +43,70 @@ public class IHungry {
 			}
 
 			switch (opcao) {
-			case 1:int opentrada;
-			do{
-				PrintTela.EscolhaEntrada();
-				int armazenaIdentrada = sc.nextInt();
-                PrintTela.EscolhaQuantidade();
-				int armazenaQuantidadeEntrada = sc.nextInt();
-				PrintTela.AdicionarFinalizar();
-				opentrada = sc.nextInt();
-				escolhaEntradas.put(armazenaIdentrada, armazenaQuantidadeEntrada);
-			}while( opentrada != 1);
-				
+			case 1:
+				int opentrada;
+				do {
+					PrintTela.EscolhaEntrada();
+					int armazenaIdentrada = sc.nextInt();
+					PrintTela.EscolhaQuantidade();
+					int armazenaQuantidadeEntrada = sc.nextInt();
+					PrintTela.AdicionarFinalizar();
+					opentrada = sc.nextInt();
+					escolhaEntradas.put(armazenaIdentrada, armazenaQuantidadeEntrada);
+				} while (opentrada != 1);
+
 				break;
 			case 2:
 				int opLanche;
-				do{
+				do {
 					PrintTela.EscolhaLanches();
 					int armazenaIdLanche = sc.nextInt();
-                    PrintTela.EscolhaQuantidade();
+					PrintTela.EscolhaQuantidade();
 					int armazenaQuantidadeLanche = sc.nextInt();
 					PrintTela.AdicionarFinalizar();
 					opLanche = sc.nextInt();
 					escolhaLanche.put(armazenaIdLanche, armazenaQuantidadeLanche);
-				}while( opLanche != 1);
+				} while (opLanche != 1);
 				break;
 			case 3:
 				int opBebida;
-				do{
+				do {
 					PrintTela.EscolhaBebida();
 					int armazenaIdBebida = sc.nextInt();
-                    PrintTela.EscolhaQuantidade();
+					PrintTela.EscolhaQuantidade();
 					int armazenaQuantidadeBebida = sc.nextInt();
 					PrintTela.AdicionarFinalizar();
 					opBebida = sc.nextInt();
 					escolhaBebida.put(armazenaIdBebida, armazenaQuantidadeBebida);
-				}while( opBebida != 1);
+				} while (opBebida != 1);
 				break;
 			case 4:
 				int opSobremesa;
-				do{
+				do {
 					PrintTela.EscolhaSobremesa();
 					int armazenaIdSobremesa = sc.nextInt();
-                    PrintTela.EscolhaQuantidade();
+					PrintTela.EscolhaQuantidade();
 					int armazenaQuantidadeSobremesa = sc.nextInt();
 					PrintTela.AdicionarFinalizar();
 					opSobremesa = sc.nextInt();
 					escolhaSobremesa.put(armazenaIdSobremesa, armazenaQuantidadeSobremesa);
-				}while( opSobremesa != 1);
-				
+				} while (opSobremesa != 1);
+
 				break;
 			case 5:
-				
-				NF.GerarNotaFiscal (escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
+
+				NF.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 
 				keyPress();
 				break;
 			case 6:
+				NF.mostraId(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
+				int id = sc.nextInt();
+				NF.retira(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas,id);
 				
-			default:
-				System.out.println("\nOpção Inválida");
-
 				break;
 			}
 		}
-
 	}
 
 	public static void keyPress() {

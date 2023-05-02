@@ -50,19 +50,63 @@ public class NF {
 
 		System.out.printf("Total R$ %.2f", valorTotal);
 	}
+	public static void retira(Map<Integer, Integer> lanches, Map<Integer, Integer> bebidas,
+			Map<Integer, Integer> sobremesas, Map<Integer, Integer> entradas, int id) {
 	
-	public static void RetiraItem(Map<Integer, Integer> lanches, Map<Integer, Integer> bebidas,
-			Map<Integer, Integer> sobremesas, Map<Integer, Integer> entradas) {
-		
 		for (Produto item : Cardapio.Lanches) {
-			if (lanches.containsKey(item.Id)){
-				lanches.remove(item.Id);
-				System.out.println(item.Nome + "--------" + item.Valor + "foi removido da sua compra");
-			}else {
-				
-				System.out.println("Item inválido, tente novamente!");
-				
+			if (lanches.containsKey(item.Id)) {
+                lanches.remove(id);
 			}
 		}
+
+		for (Produto item : Cardapio.Bebidas)
+			if (bebidas.containsKey(item.Id)) {
+				bebidas.remove(id);
+			}
+
+		for (Produto item : Cardapio.Sobremesas) {
+			if (sobremesas.containsKey(item.Id)) {
+				sobremesas.remove(id);
+			}
+		}
+
+		for (Produto item : Cardapio.Entradas) {
+			if (entradas.containsKey(item.Id)) {
+                entradas.remove(id);
+			}
+		}
+
 	}
+	public static void mostraId(Map<Integer, Integer> lanches, Map<Integer, Integer> bebidas,
+			Map<Integer, Integer> sobremesas, Map<Integer, Integer> entradas) {
+	
+		for (Produto item : Cardapio.Lanches) {
+			if (lanches.containsKey(item.Id)) {
+
+				System.out.println(item.Nome + " -------- ID "+item.Id);
+			}
+		}
+
+		for (Produto item : Cardapio.Bebidas)
+			if (bebidas.containsKey(item.Id)) {
+
+				System.out.println(item.Nome + " -------- ID "+item.Id);
+			}
+
+		for (Produto item : Cardapio.Sobremesas) {
+			if (sobremesas.containsKey(item.Id)) {
+				
+				System.out.println(item.Nome + " -------- ID "+item.Id);
+			}
+		}
+
+		for (Produto item : Cardapio.Entradas) {
+			if (entradas.containsKey(item.Id)) {
+				
+				System.out.println(item.Nome + " -------- ID "+item.Id);
+			}
+		}
+
+	}
+	
 }
