@@ -96,14 +96,16 @@ public class IHungry {
 			case 5:
 
 				NF.GerarNotaFiscal(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
-
-				keyPress();
+				sc.nextLine();
+				sc.nextLine();
 				break;
 			case 6:
 				NF.mostraId(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 				int id = sc.nextInt();
 				NF.retira(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas,id);
-				
+				sc.nextLine();
+				sc.nextLine();
+			
 				break;
 			}
 		}
