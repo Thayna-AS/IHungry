@@ -121,7 +121,7 @@ public class NF {
 			if (entradas.containsKey(item.Id)) {
 				
 				
-				System.out.println (PrintTela.ANSI_BLACK_BACKGROUND + PrintTela. TEXT_WHITE_BOLD +"--------------------------------------------------------------\n"+item.Nome + " -------- Numero "+item.Id + "\n--------------------------------------------------------------"+PrintTela.TEXT_RESET);
+				System.out.println (PrintTela. TEXT_WHITE_BOLD +item.Nome +"-------- Numero "+item.Id+PrintTela.TEXT_RESET);
 			}
 		}
           		
