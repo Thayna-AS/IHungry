@@ -100,30 +100,32 @@ public class NF {
 		for (Produto item : Cardapio.Lanches) {
 			if (lanches.containsKey(item.Id)) {
 
-				System.out.println(item.Nome + " -------- ID "+item.Id);
+				System.out.println(item.Nome + " -------- Numero "+item.Id);
 			}
 		}
 
 		for (Produto item : Cardapio.Bebidas)
 			if (bebidas.containsKey(item.Id)) {
 
-				System.out.println(item.Nome + " -------- ID "+item.Id);
+				System.out.println(item.Nome + " -------- Numero "+item.Id);
 			}
 
 		for (Produto item : Cardapio.Sobremesas) {
 			if (sobremesas.containsKey(item.Id)) {
 				
-				System.out.println(item.Nome + " -------- ID "+item.Id);
+				System.out.println(item.Nome + " -------- Numero "+item.Id);
 			}
 		}
 
 		for (Produto item : Cardapio.Entradas) {
 			if (entradas.containsKey(item.Id)) {
 				
-				System.out.println(item.Nome + " -------- ID "+item.Id);
+				
+				System.out.println (PrintTela.ANSI_BLACK_BACKGROUND + PrintTela. TEXT_WHITE_BOLD +"--------------------------------------------------------------\n"+item.Nome + " -------- Numero "+item.Id + "\n--------------------------------------------------------------"+PrintTela.TEXT_RESET);
 			}
 		}
-
+          		
+          		
 	}
 	
 }

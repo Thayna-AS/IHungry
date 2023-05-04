@@ -158,7 +158,7 @@ public class PrintTela {
 	public static void confirma() {
 		System.out.println(TEXT_YELLOW + ANSI_BLACK_BACKGROUND
 				         + "---------------------------------------------------------------");
-		System.out.println("                Categoria retirada com sucesso!                ");
+		System.out.println("              Informe  o  item a ser removido                  ");
 		System.out.println("---------------------------------------------------------------");
 		System.out.println("" + TEXT_RESET);
 	}

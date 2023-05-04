@@ -100,8 +100,11 @@ public class IHungry {
 				sc.nextLine();
 				break;
 			case 6:
+				PrintTela.confirma();
 				NF.mostraId(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas);
 				int id = sc.nextInt();
+				
+			
 				NF.retira(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas,id);
 				sc.nextLine();
 				sc.nextLine();
