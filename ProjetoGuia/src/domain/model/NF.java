@@ -18,13 +18,13 @@ public class NF {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		String dataFormatada = formato.format(dataAtual);
 		System.out.println();
-		System.out.println("""
-	--------------------------------------------------------
-			C U P O M   F I S C A L					
-	--------------------------------------------------------
-				""");
-        System.out.println("\t\tData atual: " + dataFormatada+"\n");
-        System.out.println("--------------------------------------------------------\n");
+		System.out.println(PrintTela.TEXT_YELLOW+"""
+ --------------------------------------------------------------
+		     	   C U P O M   F I S C A L					
+	--------------------------------------------------------------
+				"""+ PrintTela.TEXT_RESET);
+        System.out.println(PrintTela.TEXT_YELLOW+" Data atual: " + dataFormatada+"\n"+ PrintTela.TEXT_RESET);
+        System.out.println(PrintTela.TEXT_YELLOW+"--------------------------------------------------------------\n"+ PrintTela.TEXT_RESET);
 
         
 		for (Produto item : Cardapio.Lanches) {
@@ -32,7 +32,7 @@ public class NF {
 				quantidade = lanches.get(item.Id);
 				valorTotal += item.Valor * quantidade;
 
-				System.out.println(item.Nome + " -------- " + item.Valor + " --------------- Quantidade: " + quantidade);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " ------- " + item.Valor + " ---------- Quantidade: " + quantidade+ PrintTela.TEXT_RESET);
 			}
 		}
 
@@ -41,7 +41,7 @@ public class NF {
 				quantidade = bebidas.get(item.Id);
 				valorTotal += item.Valor * quantidade;
 
-				System.out.println(item.Nome + " -------- " + item.Valor + " --------------- Quantidade: " + quantidade);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " ------- " + item.Valor + " ------------ Quantidade: " + quantidade+ PrintTela.TEXT_RESET);
 			}
 
 		for (Produto item : Cardapio.Sobremesas) {
@@ -49,7 +49,7 @@ public class NF {
 				quantidade = sobremesas.get(item.Id);
 				valorTotal += item.Valor * quantidade;
 
-				System.out.println(item.Nome + " -------- " + item.Valor + " --------------- Quantidade: " + quantidade);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " ------- " + item.Valor + " ------------ Quantidade: " + quantidade+ PrintTela.TEXT_RESET);
 			}
 		}
 
@@ -59,13 +59,14 @@ public class NF {
 				quantidade = entradas.get(item.Id);
 				valorTotal += item.Valor * quantidade;
 
-				System.out.println(item.Nome + " -------- " + item.Valor + " --------------- Quantidade: " + quantidade);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " ------- " + item.Valor + " ------------ Quantidade: " + quantidade+ PrintTela.TEXT_RESET);
 			}
 		}
 
-		System.out.printf("Total   -------- R$ %.2f\n\n", valorTotal);
-		System.out.println("\t\tV O L T E   S E M P R E");
-		System.out.println("--------------------------------------------------------");
+		System.out.printf("\n\nTotal   -------- R$ %.2f",valorTotal);
+		  System.out.println(PrintTela.TEXT_YELLOW+"\n--------------------------------------------------------------"+ PrintTela.TEXT_RESET);
+		System.out.println(PrintTela.TEXT_YELLOW+"\t\t\tV O L T E   S E M P R E"+ PrintTela.TEXT_RESET);
+		System.out.println(PrintTela.TEXT_YELLOW+"--------------------------------------------------------------"+ PrintTela.TEXT_RESET);
 	}
 	public static void retira(Map<Integer, Integer> lanches, Map<Integer, Integer> bebidas,
 			Map<Integer, Integer> sobremesas, Map<Integer, Integer> entradas, int id) {
@@ -97,23 +98,26 @@ public class NF {
 	public static void mostraId(Map<Integer, Integer> lanches, Map<Integer, Integer> bebidas,
 			Map<Integer, Integer> sobremesas, Map<Integer, Integer> entradas) {
 	
+		System.out.println(PrintTela.TEXT_YELLOW+
+                "---------------------------------------------------------------"+ PrintTela.TEXT_RESET);
+		
 		for (Produto item : Cardapio.Lanches) {
 			if (lanches.containsKey(item.Id)) {
-
-				System.out.println(item.Nome + " -------- Numero "+item.Id);
+				
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " -------- Numero "+item.Id+" "+ PrintTela.TEXT_RESET);
 			}
 		}
 
 		for (Produto item : Cardapio.Bebidas)
 			if (bebidas.containsKey(item.Id)) {
 
-				System.out.println(item.Nome + " -------- Numero "+item.Id);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " -------- Numero "+item.Id+" "+ PrintTela.TEXT_RESET);
 			}
 
 		for (Produto item : Cardapio.Sobremesas) {
 			if (sobremesas.containsKey(item.Id)) {
 				
-				System.out.println(item.Nome + " -------- Numero "+item.Id);
+				System.out.println(PrintTela.TEXT_YELLOW+item.Nome + " -------- Numero "+item.Id+" "+ PrintTela.TEXT_RESET);
 			}
 		}
 
@@ -121,10 +125,11 @@ public class NF {
 			if (entradas.containsKey(item.Id)) {
 				
 				
-				System.out.println (PrintTela. TEXT_WHITE_BOLD +item.Nome +"-------- Numero "+item.Id+PrintTela.TEXT_RESET);
+				System.out.println (PrintTela.TEXT_YELLOW +item.Nome +"-------- Numero "+item.Id+" "+PrintTela.TEXT_RESET);
 			}
 		}
-          		
+		System.out.println(PrintTela.TEXT_YELLOW+
+                "---------------------------------------------------------------"+ PrintTela.TEXT_RESET);	
           		
 	}
 	

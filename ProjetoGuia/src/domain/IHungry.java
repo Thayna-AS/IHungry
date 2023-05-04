@@ -107,7 +107,6 @@ public class IHungry {
 			
 				NF.retira(escolhaLanche, escolhaBebida, escolhaSobremesa, escolhaEntradas,id);
 				sc.nextLine();
-				sc.nextLine();
 			
 				break;
 			}
